@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>一个程序员</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://redoc.github.io/"/>
+  <updated>2016-10-22T08:03:59.000Z</updated>
+  <id>https://redoc.github.io/</id>
+  
+  <author>
+    <name>R</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Javascript格式化日期字符串</title>
+    <link href="https://redoc.github.io/2016/10/21/js-format-date-string/"/>
+    <id>https://redoc.github.io/2016/10/21/js-format-date-string/</id>
+    <published>2016-10-21T09:55:57.000Z</published>
+    <updated>2016-10-22T08:03:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">datestr</span>(<span class="params">fmt, d</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> fmt = fmt || <span class="string">'yyyy-MM-dd hh:mm:ss'</span>;</div><div class="line">    <span class="keyword">var</span> d = d || (<span class="keyword">new</span> <span class="built_in">Date</span>());</div><div class="line">    <span class="keyword">var</span> o = &#123;</div><div class="line">        <span class="string">'M+'</span>: d.getMonth() + <span class="number">1</span>,</div><div class="line">        <span class="string">'d+'</span>: d.getDate(),</div><div class="line">        <span class="string">'h+'</span>: d.getHours(),</div><div class="line">        <span class="string">'m+'</span>: d.getMinutes(),</div><div class="line">        <span class="string">'s+'</span>: d.getSeconds(),</div><div class="line">        <span class="string">'qq+'</span>: <span class="built_in">Math</span>.floor((d.getMonth() + <span class="number">3</span>) / <span class="number">3</span>),</div><div class="line">        <span class="string">'S+'</span>: <span class="built_in">Math</span>.round(d.getMilliseconds() / <span class="number">10</span>)</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(fmt))</div><div class="line">        fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (d.getFullYear() + <span class="string">''</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> o) &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'('</span> + k + <span class="string">')'</span>).test(fmt))</div><div class="line">            fmt = fmt.replace(</div><div class="line">                <span class="built_in">RegExp</span>.$<span class="number">1</span>, </div><div class="line">                <span class="built_in">RegExp</span>.$<span class="number">1.</span>length == <span class="number">1</span> ? o[k] : (<span class="string">'00'</span> + o[k]).substr((<span class="string">''</span> + o[k]).length)</div><div class="line">            );</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fmt;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(datestr());</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://redoc.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://redoc.github.io/2016/10/21/hello-world/"/>
+    <id>https://redoc.github.io/2016/10/21/hello-world/</id>
+    <published>2016-10-21T05:45:19.000Z</published>
+    <updated>2016-10-24T16:26:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<hr>
+<p>$$\sum$$</p>
+<p><img src="panda.png" alt="Panda"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://redoc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="测试" scheme="https://redoc.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+</feed>
